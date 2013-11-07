@@ -30,8 +30,12 @@ def edit
 	@edit_pic.source
 end
 
+def update
+	@picture = Picture.find(params[:id])
+  	@picture.caption = params[:caption]
+  	@picture.source = params[:source]
+  	@picture.save
 
-
-
+end
 
 end
