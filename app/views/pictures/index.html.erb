@@ -1,10 +1,13 @@
 <h1>Picture Details for All Pictures</h1>
 
-
+<%= link_to "Add a new picture", new_picture_url %>
 
 <% @list_of_pictures.each do |pic| %>
 	<li>
-		<img src="<%= pic.source %>">
+		<%= image_tag(pic.source, :width => 200) %>
 		<%= pic.caption %>
+		<%= link_to("Show details of this picture", "http://localhost:3000/picture_details/#{pic.id}") %>
+		<%= link_to("Edit this picture", "http://localhost:3000/edit_picture_form/#{pic.id}") %>		
+		<%= link_to("Delete this picture", "http://localhost:3000/delete_picture/#{pic.id}", :method => "delete") %>
 	</li>
 <% end %>	
