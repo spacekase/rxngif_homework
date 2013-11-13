@@ -16,20 +16,20 @@ class PicturesController < ApplicationController
   	@picture.caption = params[:caption]
   	@picture.source = params[:source]
   	@picture.save
-  	redirect_to "http://localhost:3000/all_pictures"
+  	redirect_to pictures_url
   end
 
   def destroy
   	@picture = Picture.find(params[:id])
   	@picture.destroy
   	@picture.save
-  	redirect_to "http://localhost:3000/all_pictures"
+  	redirect_to pictures_url
   end
 
 def edit
-	@edit_pic = Picture.find(params[:id])
-	@edit_pic.caption
-	@edit_pic.source
+	@picture = Picture.find(params[:id])
+	@picture.caption
+	@picture.source
 end
 
 def update
@@ -37,7 +37,7 @@ def update
   	@picture.caption = params[:caption]
   	@picture.source = params[:source]
   	@picture.save
-  	redirect_to "http://localhost:3000/picture_details/#{@picture.id}"
+  	redirect_to pictures_url
 end
 
 end

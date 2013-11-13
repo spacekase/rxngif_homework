@@ -6,8 +6,8 @@
 	<li>
 		<%= image_tag(pic.source, :width => 200) %>
 		<%= pic.caption %>
-		<%= link_to("Show details of this picture", "http://localhost:3000/picture_details/#{pic.id}") %>
-		<%= link_to("Edit this picture", "http://localhost:3000/edit_picture_form/#{pic.id}") %>		
-		<%= link_to("Delete this picture", "http://localhost:3000/delete_picture/#{pic.id}", :method => "delete") %>
+		<%= link_to("Show", picture_url(pic.id), :method => "get") %>
+		<%= link_to("Edit", edit_picture_url(pic.id), :method => "get") %>
+		<%= link_to("Delete", picture_url(pic.id), :method => "delete") %>
 	</li>
 <% end %>	

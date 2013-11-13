@@ -1,8 +1,8 @@
 <h1>New Picture Form</h1>
 
-<%= form_tag("http://localhost:3000/create_picture") do %>
+<%= form_tag(pictures_url) do %>
   <div>
-    <%= label_tag :caption %>
+    <%= label_tag :caption, "Caption:" %>
     <%= text_field_tag :caption %>
   </div>
   <div>
